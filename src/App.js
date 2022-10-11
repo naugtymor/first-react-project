@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from './Header.js';
-import Technologies from './Technologies.js';
+import Header from './Header';
+import Technologies from './Technologies';
+// import Technologies from './Technologies.js';
 
 
 function App() {
