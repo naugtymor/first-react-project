@@ -1,38 +1,53 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Technologies from './Technologies';
-// import Technologies from './Technologies.js';
+
 
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Technologies />
+    <div className={'app-wrapper'}>
+        <header className={'header'}>
+            <img src='https://assets.stickpng.com/thumbs/61362734f5966900044cbf74.png'/>
+        </header>
+    <nav className={'nav'}>
+        <div>
+            <a>Profile</a>
+        </div>
+        <div>
+            <a>Messages</a>
+        </div>
+        <div>
+            <a>News</a>
+        </div>
+        <div>
+            <a>Music</a>
+        </div>
+        <div>
+            <a>Settings</a>
+        </div>
+    </nav>
+        <div className={'content'}>
+            <div>
+                <img src='https://i.redd.it/a0ez44uhhx911.jpg'/>
+            </div>
+            <div>
+                ava + description
+            </div>
+            <div>
+                My posts
+                <div>
+                    New post
+                </div>
+                <div>
+                    Post 1
+                </div>
+                <div>
+                    Post 2
+                </div>
+            </div>
+        </div>
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       I am sure that I will become a <code>programmer</code>
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    // HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   );
 }
-
-
-
-
 
 export default App;
