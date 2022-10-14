@@ -1,13 +1,21 @@
 .content {
     grid-area: c;
-    background-color: darkseagreen;
+    background-color: #020229;
+    border-radius: 20px;
+    color: #51b1ed;
+
 }
 .content img {
     width: 1000px;
+    border-radius: 20px;
+
 }
 
 .item {
-    color: aquamarine;
+    color: gold;
+    padding-left: 15px;
+    /*padding-bottom: 5px;*/
+    margin-bottom: 10px;
 }
 
 .posts {
