@@ -8,16 +8,14 @@
 .content img {
     width: 1000px;
     border-radius: 20px;
-
 }
 
-.item {
-    color: gold;
-    padding-left: 15px;
-    /*padding-bottom: 5px;*/
-    margin-bottom: 10px;
-}
+/*.posts {*/
 
-.posts {
+/*}*/
 
-}
+/*.timeline {*/
+/*    padding-left: 15px;*/
+/*    !*padding-bottom: 5px;*!*/
+/*    margin-bottom: 10px;*/
+/*}*/
