@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src={'https://wallpapercave.com/uwp/uwp753612.png'} alt={'description of image'}/>
             {props.message}
             <div>
-                <span>likes {props.likesValue}</span>
+                <span>likes {props.likesCount}</span>
             </div>
         </div>
     )
