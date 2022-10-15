@@ -1,9 +1,20 @@
-/*.posts {*/
+.postsBlock {
+    padding: 30px;
+}
 
-/*}*/
+.posts {
+    margin-top: 20px;
+}
+textarea {
+    border-radius: 10px;
+    background-color: #aff5ee;
+    height: 70px;
+    width: 250px;
+}
 
-/*.timeline {*/
-/*    padding-left: 15px;*/
-/*    !*padding-bottom: 5px;*!*/
-/*    margin-bottom: 10px;*/
-/*}*/
+button {
+    background-color: white;
+    width: 125px;
+    height: 50px;
+    border-radius: 10px;
+}
