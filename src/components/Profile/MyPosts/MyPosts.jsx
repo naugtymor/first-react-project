@@ -14,7 +14,7 @@ const MyPosts = () => {
     ]
 
     let postsElements = posts
-        .map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+        .map((p, index) => <Post message={p.message} likesCount={p.likesCount} key={index}/>)
 
     return (
         <div className={s.postsBlock}>
@@ -30,7 +30,7 @@ const MyPosts = () => {
             <div className={s.posts}>
                 {postsElements}
             </div>
-        </div>
+</div>
     )
 }
 
