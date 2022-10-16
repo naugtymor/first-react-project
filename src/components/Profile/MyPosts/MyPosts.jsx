@@ -10,7 +10,6 @@ const MyPosts = () => {
         {id: 3, message: 'Now a know mapping', likesCount: '40'},
         {id: 4, message: 'Cococo', likesCount: '2'},
         {id: 5, message: 'Ole Ole', likesCount: '5'},
-
     ]
 
     let postsElements = posts
@@ -30,7 +29,7 @@ const MyPosts = () => {
             <div className={s.posts}>
                 {postsElements}
             </div>
-</div>
+        </div>
     )
 }
 
