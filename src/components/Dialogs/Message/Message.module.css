@@ -1,4 +1,13 @@
 .dialog {
     color: white;
     text-decoration: none;
+    font-style: italic;
+}
+
+.dialog:nth-child(1) {
+    text-align: left;
+}
+
+.dialog:nth-child(2n) {
+    text-align: right;
 }
