@@ -1,0 +1,27 @@
+.sidebar {
+    grid-area: s;
+    background-color: #30063b;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.items img{
+    width: 35px;
+}
+
+.items {
+    font-size: 15px;
+    color: white;
+}
+
+.item {
+    margin-top: 15px;
+    text-align: center;
+
+}
