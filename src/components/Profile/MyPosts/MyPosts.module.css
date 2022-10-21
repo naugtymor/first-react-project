@@ -5,7 +5,7 @@
 .posts {
     margin-top: 20px;
 }
-textarea {
+.postsBlock textarea {
     border-radius: 10px;
     background-color: #aff5ee;
     height: 70px;

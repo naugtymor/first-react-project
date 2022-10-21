@@ -1,6 +1,6 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
 }
 
 .dialogsItems {
@@ -10,4 +10,16 @@
 
 .messages {
     padding: 30px;
+}
+
+.messages textarea {
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 70px;
+    width: 250px;
+}
+
+.messages button {
+    background-color: #5d146e;
 }
