@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -33,7 +35,16 @@ let state = {
             {id: 4, name: 'Shotahappens', img: 'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-32_611609.jpg'},
         ]
     }
-
 }
 
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: (state.profilePage.posts.length + 1),
+        message: postMessage,
+        likesCount: 0,
+    }
+
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
+}
 export default state;
