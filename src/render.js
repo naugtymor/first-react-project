@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-export let rerenderEntireTree = (state) => {
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <App state={state}/>
-    </React.StrictMode>
-);
+export let rerenderEntireTree = (state) => {
+    root.render(
+        <React.StrictMode>
+            <App state={state}/>
+        </React.StrictMode>
+    );
 }
