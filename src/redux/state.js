@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
 let store = {
     _state: {
@@ -43,6 +45,7 @@ let store = {
                     img: 'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-32_611609.jpg'
                 },
             ],
+            newMessageBody: ""
         },
 
         sidebar: {
@@ -91,8 +94,19 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+        }
+        else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === SEND_MESSAGE) {;
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messages.push({id: this._state.dialogsPage.messages.length + 1, message: body});
             this._callSubscriber(this._state);
         }
     }
@@ -100,5 +114,8 @@ let store = {
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+
+export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});
+export const updateNewMessageBodyActionCreator = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body});
 
 export default store;
