@@ -4,7 +4,7 @@ import s from './Sidebar.module.css';
 
 const Sidebar = (props) => {
     let friendsElements = props.state.friends
-        .map((f, index) => <div className={s.item}>
+        .map((f, index) => <div className={s.item} key={f.id}>
             <img src={`${f.img}`}/>
             <div>
                 {f.name}
