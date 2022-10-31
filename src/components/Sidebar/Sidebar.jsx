@@ -1,6 +1,5 @@
 import React from "react";
 import s from './Sidebar.module.css';
-// import {NavLink} from "react-router-dom";
 
 const Sidebar = (props) => {
     let friendsElements = props.state.friends

@@ -4,10 +4,10 @@ const SET_USERS = 'SET_USERS'
 
 let initialState = {
     users: [
-        // {id: 1, followed: true, fullName: 'Nikita Znak', status: 'Now I am learning React & Redux', locatiom: {city: 'Minsk', country: 'Belarus'}},
-        // {id: 2, followed: true, fullName: 'Dmitry Nazaruk', status: 'I get a job before February', locatiom: {city: 'Minsk', country: 'Belarus'}},
-        // {id: 3, followed: true, fullName: 'Ulyana Nowak', status: 'I am do not like cooking meet', locatiom: {city: 'Minsk', country: 'Belarus'}},
-        // {id: 4, followed: false, fullName: 'Alexey Agievich', status: 'I am pidor', locatiom: {city: 'Minsk', country: 'Belarus'}},
+        // {id: 1, photoUrl:'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-19_880366.jpg', followed: true, fullName: 'Nikita Znak', status: 'Now I am learning React & Redux', location: {city: 'Minsk', country: 'Belarus'}},
+        // {id: 2, photoUrl:'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-19_880366.jpg', followed: true, fullName: 'Dmitry Nazaruk', status: 'I get a job before February', location: {city: 'Minsk', country: 'Belarus'}},
+        // {id: 3, photoUrl:'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-24_066300.jpg', followed: true, fullName: 'Ulyana Nowak', status: 'I am do not like cooking meet', location: {city: 'Minsk', country: 'Belarus'}},
+        // {id: 4, photoUrl:'https://fun24.org/wp-content/uploads/2021/10/fun24.org-2021-10-30_20-41-25_959615.jpg', followed: false, fullName: 'Alexey Agievich', status: 'I am pidor', location: {city: 'Minsk', country: 'Belarus'}},
     ]
 }
 
@@ -45,5 +45,4 @@ export const followAC = (userId) => ({type: FOLLOW, userId});
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId});
 export const setUsersAC = (users) => ({type: SET_USERS, users});
 
-
-export default usersReducer();
+export default usersReducer;
