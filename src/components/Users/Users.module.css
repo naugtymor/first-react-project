@@ -8,6 +8,7 @@
 
 .selectedPage {
     font-weight: bold;
+    color: gold;
 }
 
 .pagesSelector {

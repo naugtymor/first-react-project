@@ -10,6 +10,16 @@ class Users extends React.Component {
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(response.data.items)
+                this.props.setTotalUsersCount(response.data.totalCount)
+            });
+    }
+
+    onPageChange = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber)
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
             });
     }
 
@@ -20,12 +30,21 @@ class Users extends React.Component {
         let pages = [];
         for (let i=1; i <= pagesCount; i++) {
             pages.push(i);
-        }
+        };
+
+        let currentPage = this.props.currentPage;
+        let currentPageFirst = ((currentPage - 5) < 0 ? 0 : currentPage - 5);
+        let currentPageLast = currentPage + 4;
+        let slicedPages = pages.slice(currentPageFirst, currentPageLast);
 
         return (
             <div className={s.usersList}>
                 <div className={s.pagesSelector}>
-                    {pages.map(p => <span className={this.props.currentPage === p && s.selectedPage}>{p}</span>)}
+                    {slicedPages.map(p => <span className={this.props.currentPage === p && s.selectedPage}
+                                          onClick={(e) => {
+                                              this.onPageChange(p)
+                                          }}>{p + " "}</span>)}
+                    ...
                 </div>
                 {
                     this.props.users.map((u, index) => <div key={index}>
