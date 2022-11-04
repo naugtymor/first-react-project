@@ -5,3 +5,7 @@ img {
 .descriptionBlock {
     padding: 30px;
 }
+
+.descriptionBlock img {
+    width: 300px;
+}

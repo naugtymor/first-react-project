@@ -1,11 +1,11 @@
 import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../assets/images/user.png";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
@@ -19,7 +19,7 @@ let Users = (props) => {
     return (
         <div className={s.usersList}>
             <div className={s.pagesSelector}>
-                {slicedPages.map((p,index) => <span key={index} className={props.currentPage === p && s.selectedPage}
+                {slicedPages.map((p,index) => <span key={index} className={props.currentPage === p ? s.selectedPage : undefined}
                                             onClick={() => {
                                                 props.onPageChange(p)
                                             }}>{p + " "}</span>)}
@@ -29,8 +29,9 @@ let Users = (props) => {
                 props.users.map((u, index) => <div key={index}>
                     <span>
                         <div>
-                            <img className={s.userImg} src={u.photos.small != null ? u.photos.small : userPhoto}
-                                 alt={'description'}/>
+                            <NavLink to={'/profile/' + u.id}>
+                                <img className={s.userImg} src={u.photos.small != null ? u.photos.small : userPhoto} alt={'description'}/>
+                            </NavLink>
                         </div>
                         <div>
                             {u.followed
