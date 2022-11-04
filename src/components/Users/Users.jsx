@@ -19,7 +19,7 @@ let Users = (props) => {
     return (
         <div className={s.usersList}>
             <div className={s.pagesSelector}>
-                {slicedPages.map(p => <span className={props.currentPage === p && s.selectedPage}
+                {slicedPages.map((p,index) => <span key={index} className={props.currentPage === p && s.selectedPage}
                                             onClick={() => {
                                                 props.onPageChange(p)
                                             }}>{p + " "}</span>)}
