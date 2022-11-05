@@ -14,8 +14,9 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
-                <h2>ava + description</h2>
-                {/*дз: распаковать запрос и отобразить больше инфы*/}
+                <h2>{props.profile.fullName}</h2>
+                <div style={{color: "white"}}>Status: {props.profile.aboutMe} </div>
+                    <div>Searching for a job: {props.profile.lookingForAJobDescription}</div>
             </div>
         </div>
     )

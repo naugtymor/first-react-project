@@ -16,7 +16,7 @@ const MyPosts = (props) => {
 
     return (
         <div className={s.postsBlock}>
-            <h2>My posts</h2>
+            <h2>Posts</h2>
             <div>
                 <div>
                     <textarea onChange={onPostChange} value={props.newPostText} placeholder={'Enter your text'}/>
