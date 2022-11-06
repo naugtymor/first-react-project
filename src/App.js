@@ -10,6 +10,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import Profile from "./components/Profile/Profile";
 
 const App = (props) => {
     return (
@@ -19,7 +20,8 @@ const App = (props) => {
                 <Sidebar state={props.state.sidebar}/>
                 <div className={'app-wrapper-content'}>
                     <Routes>
-                        <Route path='/profile/*' element={<ProfileContainer/>}/>
+                        <Route path='/profile' element={<ProfileContainer/>} />
+                        <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                         <Route path='/dialogs' element={<DialogsContainer store={props.store}/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/music' element={<Music/>}/>
