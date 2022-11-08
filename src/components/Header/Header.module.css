@@ -8,3 +8,13 @@
     padding-left: 15px;
     padding-top: 8px;
 }
+
+.loginBlock {
+    float: right;
+    color: white;
+}
+
+.loginBlock a {
+    color: white;
+    padding-right: 15px;
+}
