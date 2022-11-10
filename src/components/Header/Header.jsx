@@ -8,10 +8,7 @@ const Header = (props) => {
             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/1756px-Twitch_Glitch_Logo_Purple.svg.png' alt={'description of image'}/>
 
             <div className={s.loginBlock}>
-                {props.isAuth ? props.login : <NavLink to={'/login'}>
-                    Login
-                </NavLink>}
-
+                {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
             </div>
         </header>
     )
