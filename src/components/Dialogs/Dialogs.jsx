@@ -45,7 +45,7 @@ const AddMessageForm = (props) => {
     )
 }
 
-const AddMessageReduxForm = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm);
+const AddMessageReduxForm = reduxForm({form: 'DialogAddMessageForm'})(AddMessageForm);
 
 
 export default Dialogs;
