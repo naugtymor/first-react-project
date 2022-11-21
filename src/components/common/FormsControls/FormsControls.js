@@ -1,17 +1,17 @@
 import s from './FormsControls.module.css';
 
-export const Textarea = ({input, meta, ...props}) => {
+export const Element = Element => ({input, meta, ...props}) => {
 
-    const hasError = meta.error && meta.touched;
+    const hasError = meta.touched && meta.error;
 
     return (
         <div className={s.formControl + " " + (hasError ? s.error : "")}>
             <div>
-                <textarea {...input} {...props}/>
+                <Element {...input} {...props} />
             </div>
             <div>
-                {hasError && <span>{"Some error"}</span>}
+                {hasError && <span> {meta.error} </span>}
             </div>
         </div>
-    )
-}
+    );
+};
