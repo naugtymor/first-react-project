@@ -18,3 +18,8 @@
     color: white;
     padding-right: 15px;
 }
+
+.loginBlock button {
+    height: 35px;
+    margin: 10px;
+}
