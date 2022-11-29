@@ -13,7 +13,7 @@ import {
     getIsFetching,
     getPageSize,
     getToggleInFollowingProgress, getToggleInProgress,
-    getTotalUsersCount, getUsers
+    getTotalUsersCount, getUsers,
 } from "../../redux/users-selectors";
 
 
@@ -28,6 +28,7 @@ class UsersContainer extends React.Component {
     }
 
     render() {
+        console.log("RENDER USERS")
         return <>
             {this.props.isFetching ? <Preloader/> : null}
             <Users totalUsersCount={this.props.totalUsersCount}
@@ -56,6 +57,7 @@ class UsersContainer extends React.Component {
 // }
 
 let mapStateToProps = (state) => {
+    console.log("mapStateToProps USERS")
     return {
         users: getUsers(state),
         pageSize: getPageSize(state),

@@ -1,6 +1,12 @@
-export const getUsers = (state) => {
+import {createSelector} from "reselect";
+
+const getUsersSelector = (state) => {
     return state.usersPage.users;
 };
+
+export const getUsers = createSelector(getUsersSelector,(users) => {
+    return users.filter(u => true);
+})
 
 export const getPageSize = (state) => {
     return state.usersPage.pageSize
@@ -25,3 +31,10 @@ export const getToggleInFollowingProgress = (state) => {
 export const getToggleInProgress = (state) => {
     return state.usersPage.toggleInProgress;
 };
+
+// export const countSomethingDifficult = () => {
+//     debugger
+//     //for...math...big arr
+//     let count = 25;
+//     return count;
+// }
