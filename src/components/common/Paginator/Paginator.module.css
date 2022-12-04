@@ -1,0 +1,8 @@
+.selectedPage {
+    font-weight: bold;
+    color: gold;
+}
+
+.pageSelector {
+    text-align: center;
+}

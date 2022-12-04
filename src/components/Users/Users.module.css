@@ -5,12 +5,3 @@
 .usersList {
     padding: 30px;
 }
-
-.selectedPage {
-    font-weight: bold;
-    color: gold;
-}
-
-.pagesSelector {
-    text-align: center;
-}

@@ -6,9 +6,9 @@ import s from "../common/FormsControls/FormsControls.module.css"
 
 const Input = Element("input")
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <Field placeholder={'Login'} component={Input} name={'email'} validate={[required]}/>
             </div>
@@ -19,9 +19,9 @@ const LoginForm = (props) => {
                 <Field type={"checkbox"} component={Input} name={'rememberMe'}/> remember me
             </div>
 
-            {props.error && <div>
+            {error && <div>
                 <span className={s.formSummeryError}>
-                    {props.error}
+                    {error}
                 </span>
             </div>
             }
