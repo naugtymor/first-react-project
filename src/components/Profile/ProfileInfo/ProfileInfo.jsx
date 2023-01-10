@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
+import ProfileDataForm from "./ProfileDataForm";
 
 
 const ProfileInfo = (props) => {
+
+    const [editMode, setEditMode] = useState(false);
+
     if (!props.profile) {
         return <Preloader/>
     }
@@ -16,15 +20,21 @@ const ProfileInfo = (props) => {
         }
     }
 
+
     return (
         <div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large || userPhoto}/>
                 {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                {editMode ? <ProfileDataForm profile={props.profile}/> :
+                    <ProfileData profile={props.profile}
+                                 isOwner={props.isOwner}
+                                 activateEditMode={() => {
+                                     setEditMode(true)
+                                 }}/>}
+                <ProfileStatusWithHooks status={props.status}
+                                        updateStatus={props.updateStatus}/>
 
-                <h2>{props.profile.fullName}</h2>
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-                <ProfileData profile={props.profile}/>
             </div>
         </div>
     )
@@ -41,6 +51,10 @@ const Contact = ({contactTitle, contactValue}) => {
 const ProfileData = (props) => {
     return (
         <div>
+            <h2>{props.profile.fullName}</h2>
+            <div>
+                {props.isOwner ? <button onClick={props.activateEditMode}>edit</button> : ''}
+            </div>
             <div>Searching for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
             <div>About me: {props.profile.aboutMe}</div>
             <div>My professional skills: {props.profile.lookingForAJobDescription}</div>
@@ -50,5 +64,6 @@ const ProfileData = (props) => {
         </div>
     )
 }
+
 
 export default ProfileInfo;

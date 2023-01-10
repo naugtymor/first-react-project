@@ -4,7 +4,7 @@ import React from "react";
 import {Element} from "../common/FormsControls/FormsControls";
 import s from "../common/FormsControls/FormsControls.module.css"
 
-const Input = Element("input")
+const Input = Element("input");
 
 const LoginForm = ({handleSubmit, error}) => {
     return (
