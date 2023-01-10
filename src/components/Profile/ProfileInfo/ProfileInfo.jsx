@@ -21,10 +21,32 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large || userPhoto}/>
                 {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+
                 <h2>{props.profile.fullName}</h2>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-                <div>Searching for a job: {props.profile.lookingForAJobDescription}</div>
+                <ProfileData profile={props.profile}/>
             </div>
+        </div>
+    )
+}
+
+const Contact = ({contactTitle, contactValue}) => {
+    return (
+        <div className={s.contact}>
+            {contactTitle}:{contactValue}
+        </div>
+    )
+}
+
+const ProfileData = (props) => {
+    return (
+        <div>
+            <div>Searching for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+            <div>About me: {props.profile.aboutMe}</div>
+            <div>My professional skills: {props.profile.lookingForAJobDescription}</div>
+            <div>Contacts {Object.keys(props.profile.contacts).map(key => {
+                return <Contact contactTitle={key} contactValue={props.profile.contacts[key]}/>
+            })}</div>
         </div>
     )
 }

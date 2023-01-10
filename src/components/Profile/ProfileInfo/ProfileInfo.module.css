@@ -9,3 +9,7 @@ img {
 .descriptionBlock img {
     width: 300px;
 }
+
+.contact {
+    padding-left: 10px;
+}
