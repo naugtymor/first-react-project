@@ -93,8 +93,9 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         dispatch(getUserProfile(userId));
     }
     else {
-        dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}))
-        // dispatch(stopSubmit("edit-profile", {"contacts": {"facebook" : response.data.messages[0]}})) //разобрать ошибку на кадое зачение
+        dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}));
+        return Promise.reject(response.data.messages[0]);
+        // dispatch(stopSubmit("edit-profile", {"contacts": {"facebook" : response.data.messages[0]}})) //разобрать ошибку на кадое зачение (коммент 97 урок)
     }
 }
 

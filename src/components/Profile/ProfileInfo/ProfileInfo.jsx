@@ -19,11 +19,10 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         }
     }
 
-    const onSubmit = async (formData) => {
+    const onSubmit = (formData) => {
         saveProfile(formData).then(() => {
-
+            setEditMode(false);
         })
-        setEditMode(false);
     }
 
     return (
