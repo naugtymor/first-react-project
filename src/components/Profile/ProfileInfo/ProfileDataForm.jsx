@@ -15,7 +15,7 @@ const ProfileDataForm = ({handleSubmit}) => {
                 <Field component={Input} name={'fullName'} placeholder={'Full Name'} validate={[]}/>
             </h2>
             <div>Searching for a job:
-                <Field component={Input} name={'searchingForAJob'} validate={[]} type={"checkbox"}/>
+                <Field component={Input} name={'lookingForAJob'} validate={[]} type={"checkbox"}/>
             </div>
             <div>About me:
                 <Field component={Input} name={'aboutMe'} placeholder={'About Me'} validate={[]}/>
