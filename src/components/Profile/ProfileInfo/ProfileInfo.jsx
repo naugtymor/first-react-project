@@ -3,37 +3,39 @@ import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
-import ProfileDataForm from "./ProfileDataForm";
+import {ProfileDataReduxForm} from "./ProfileDataForm";
 
-
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
     const [editMode, setEditMode] = useState(false);
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
 
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
-            props.savePhoto(e.target.files[0])
+            savePhoto(e.target.files[0])
         }
     }
 
+    const onSubmit = (formData) => {
+        saveProfile(formData);
+    }
 
     return (
         <div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large || userPhoto}/>
-                {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
-                {editMode ? <ProfileDataForm profile={props.profile}/> :
-                    <ProfileData profile={props.profile}
-                                 isOwner={props.isOwner}
+                <img src={profile.photos.large || userPhoto}/>
+                {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                {editMode ? <ProfileDataReduxForm profile={profile} onSubmit={onSubmit}/> :
+                    <ProfileData profile={profile}
+                                 isOwner={isOwner}
                                  activateEditMode={() => {
                                      setEditMode(true)
                                  }}/>}
-                <ProfileStatusWithHooks status={props.status}
-                                        updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={status}
+                                        updateStatus={updateStatus}/>
 
             </div>
         </div>
@@ -58,8 +60,8 @@ const ProfileData = (props) => {
             <div>Searching for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
             <div>About me: {props.profile.aboutMe}</div>
             <div>My professional skills: {props.profile.lookingForAJobDescription}</div>
-            <div>Contacts {Object.keys(props.profile.contacts).map(key => {
-                return <Contact contactTitle={key} contactValue={props.profile.contacts[key]}/>
+            <div>Contacts {Object.keys(props.profile.contacts).map((key,index) => {
+                return <Contact key={index} contactTitle={key} contactValue={props.profile.contacts[key]}/>
             })}</div>
         </div>
     )
