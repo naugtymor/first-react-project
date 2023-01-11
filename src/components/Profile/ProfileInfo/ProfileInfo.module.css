@@ -13,3 +13,8 @@ img {
 .contact {
     padding-left: 10px;
 }
+
+.formSummeryError {
+    border: red 1px solid;
+    color: red;
+}
