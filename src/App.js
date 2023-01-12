@@ -1,14 +1,12 @@
 import React from "react";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes, Navigate} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Sidebar from "./components/Sidebar/Sidebar";
-// import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-// import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {connect, Provider} from "react-redux";
@@ -20,7 +18,6 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends React.Component {
-
     componentDidMount() {
         this.props.initializeApp();
     }
@@ -38,6 +35,7 @@ class App extends React.Component {
                 <div className={'app-wrapper-content'}>
                     <React.Suspense fallback={<div><Preloader/></div>}>
                         <Routes>
+                            <Route exact path="/" element={<Navigate to={'/profile'} /> } />
                             <Route path='/profile' element={<ProfileContainer/>}/>
                             <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                             <Route path='/dialogs' element={<DialogsContainer/>}/>
@@ -46,6 +44,7 @@ class App extends React.Component {
                             <Route path='/settings' element={<Settings/>}/>
                             <Route path='/users' element={<UsersContainer/>}/>
                             <Route path='/login' element={<Login/>}/>
+                            <Route path='*' element={<div>404 NOT FOUND</div>}/>
                         </Routes>
                     </React.Suspense>
                 </div>
