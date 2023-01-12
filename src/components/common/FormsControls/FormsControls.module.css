@@ -18,3 +18,7 @@
     border: red 1px solid;
     color: red;
 }
+
+.captchaImg {
+    width: 150px;
+}

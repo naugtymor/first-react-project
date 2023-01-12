@@ -6,7 +6,7 @@ import s from "../common/FormsControls/FormsControls.module.css"
 
 const Input = Element("input");
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -18,7 +18,12 @@ const LoginForm = ({handleSubmit, error}) => {
             <div>
                 <Field type={"checkbox"} component={Input} name={'rememberMe'}/> remember me
             </div>
-
+            {captchaUrl &&
+                <img className={s.captchaImg} src={captchaUrl}/>
+            }
+            {captchaUrl &&
+                <Field placeholder={'Captcha'} component={Input} name={'captcha'} validate={[required]}/>
+            }
             {error && <div>
                 <span className={s.formSummeryError}>
                     {error}
