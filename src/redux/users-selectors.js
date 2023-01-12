@@ -31,10 +31,3 @@ export const getToggleInFollowingProgress = (state) => {
 export const getToggleInProgress = (state) => {
     return state.usersPage.toggleInProgress;
 };
-
-// export const countSomethingDifficult = () => {
-//     debugger
-//     //for...math...big arr
-//     let count = 25;
-//     return count;
-// }
