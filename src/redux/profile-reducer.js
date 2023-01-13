@@ -66,35 +66,60 @@ export const savePhotoSuccess = (photos) => ({type: SET_PHOTO, photos});
 
 //thunk-creators
 export const getUserProfile = (userId) => async (dispatch) => {
-    const response = await usersAPI.getProfile(userId)
-    dispatch(setUserProfile(response.data));
+    try {
+        const response = await usersAPI.getProfile(userId)
+        dispatch(setUserProfile(response.data));
+    }
+    catch(error) {
+        console.log(error)
+    }
 }
 export const getStatus = (userId) => async (dispatch) => {
-    const response = await profileAPI.getStatus(userId)
-    dispatch(setStatus(response.data));
+    try {
+        const response = await profileAPI.getStatus(userId)
+        dispatch(setStatus(response.data));
+    }
+    catch(error) {
+        console.log(error)
+    }
 }
 export const updateStatus = (status) => async (dispatch) => {
-    const response = await profileAPI.updateStatus(status)
-    if (response.data.resultCode === 0) {
-        dispatch(setStatus(status));
+    try {
+        const response = await profileAPI.updateStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(status));
+        }
+    }
+    catch(error) {
+        console.log(error)
     }
 }
 export const savePhoto = (file) => async (dispatch) => {
-    const response = await profileAPI.savePhoto(file)
-    if (response.data.resultCode === 0) {
-        dispatch(savePhotoSuccess(response.data.data.photos));
+    try {
+        const response = await profileAPI.savePhoto(file)
+        if (response.data.resultCode === 0) {
+            dispatch(savePhotoSuccess(response.data.data.photos));
+        }
+    }
+    catch(error) {
+        console.log(error)
     }
 }
 export const saveProfile = (profile) => async (dispatch, getState) => {
-    const userId = getState().auth.userId;
-    let response = await profileAPI.saveProfile(profile)
-    if (response.data.resultCode === 0) {
-        dispatch(getUserProfile(userId));
+    try {
+        const userId = getState().auth.userId;
+        let response = await profileAPI.saveProfile(profile)
+        if (response.data.resultCode === 0) {
+            dispatch(getUserProfile(userId));
+        }
+        else {
+            dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}));
+            return Promise.reject(response.data.messages[0]);
+            // dispatch(stopSubmit("edit-profile", {"contacts": {"facebook" : response.data.messages[0]}})) //разобрать ошибку на кадое зачение (коммент 97 урок)
+        }
     }
-    else {
-        dispatch(stopSubmit("edit-profile", {_error: response.data.messages[0]}));
-        return Promise.reject(response.data.messages[0]);
-        // dispatch(stopSubmit("edit-profile", {"contacts": {"facebook" : response.data.messages[0]}})) //разобрать ошибку на кадое зачение (коммент 97 урок)
+    catch(error) {
+        console.log(error)
     }
 }
 
