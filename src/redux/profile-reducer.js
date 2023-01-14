@@ -67,7 +67,7 @@ export const savePhotoSuccess = (photos) => ({type: SET_PHOTO, photos});
 //thunk-creators
 export const getUserProfile = (userId) => async (dispatch) => {
     try {
-        const response = await usersAPI.getProfile(userId)
+        const response = await profileAPI.getProfile(userId)
         dispatch(setUserProfile(response.data));
     }
     catch(error) {
