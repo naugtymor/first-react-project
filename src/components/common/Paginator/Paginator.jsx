@@ -2,7 +2,6 @@ import s from "./Paginator.module.css";
 import React from "react";
 
 export const Paginator = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
@@ -16,10 +15,11 @@ export const Paginator = (props) => {
 
     return (
         <div className={s.pageSelector}>
-            {slicedPages.map((p,index) => <span key={index} className={props.currentPage === p ? s.selectedPage : undefined}
-                                                onClick={() => {
-                                                    props.onPageChange(p)
-                                                }}>{p + " "}</span>)}
+            {slicedPages.map((p, index) => <span key={index}
+                                                 className={props.currentPage === p ? s.selectedPage : undefined}
+                                                 onClick={() => {
+                                                     props.onPageChange(p)
+                                                 }}>{p + " "}</span>)}
             ...
         </div>
     )

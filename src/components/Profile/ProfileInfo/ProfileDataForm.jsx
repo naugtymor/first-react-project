@@ -33,9 +33,10 @@ const ProfileDataForm = ({handleSubmit, profile, error}) => {
             </div>
             <div>
                 My professional skills:
-                <Field component={Textarea} name={'lookingForAJobDescription'} placeholder={'Enter your skills'} validate={[required, maxLength30]}/>
+                <Field component={Textarea} name={'lookingForAJobDescription'} placeholder={'Enter your skills'}
+                       validate={[required, maxLength30]}/>
             </div>
-            <div>Contacts {Object.keys(profile.contacts).map((key,index) => {
+            <div>Contacts {Object.keys(profile.contacts).map((key, index) => {
                 return (
                     <div className={s.contact} key={index}>
                         <div>

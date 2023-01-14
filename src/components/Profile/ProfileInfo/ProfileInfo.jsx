@@ -28,7 +28,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     return (
         <div>
             <div className={s.descriptionBlock}>
-                <img src={profile.photos.large || userPhoto}/>
+                <img src={profile.photos.large || userPhoto} alt={'avatar'}/>
                 {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
                 {editMode ? <ProfileDataReduxForm initialValues={profile} profile={profile} onSubmit={onSubmit}/> :
                     <ProfileData profile={profile}
@@ -36,9 +36,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                                  activateEditMode={() => {
                                      setEditMode(true)
                                  }}/>}
-                <ProfileStatusWithHooks status={status}
-                                        updateStatus={updateStatus}/>
-
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
         </div>
     )
@@ -62,7 +60,7 @@ const ProfileData = (props) => {
             <div>Searching for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
             <div>About me: {props.profile.aboutMe}</div>
             <div>My professional skills: {props.profile.lookingForAJobDescription}</div>
-            <div>Contacts {Object.keys(props.profile.contacts).map((key,index) => {
+            <div>Contacts {Object.keys(props.profile.contacts).map((key, index) => {
                 return <Contact key={index} contactTitle={key} contactValue={props.profile.contacts[key]}/>
             })}</div>
         </div>
