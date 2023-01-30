@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import s from './App.module.scss';
 import Navbar from './components/Navbar/Navbar';
 import {HashRouter, Route, Routes, Navigate} from "react-router-dom";
 import News from "./components/News/News";
@@ -27,6 +28,7 @@ class App extends React.Component {
         this.props.initializeApp();
         window.addEventListener("unhandledrejection", this.catchUnhandledErrors);
     }
+
     componentWillUnmount() {
         window.removeEventListener("unhandledrejection", this.catchUnhandledErrors);
     }
@@ -37,25 +39,31 @@ class App extends React.Component {
         }
 
         return (
-            <div className={'app-wrapper'}>
-                <HeaderContainer/>
-                <Navbar/>
-                {/*<Sidebar state={this.props.state.sidebar}/>*/}
-                <div className={'app-wrapper-content'}>
-                    <React.Suspense fallback={<div><Preloader/></div>}>
-                        <Routes>
-                            {/*<Route exact path="/" element={<Navigate to={'/profile'} /> } />*/}
-                            {/*<Route path='/profile' element={<ProfileContainer/>}/>*/}
-                            {/*<Route path='/profile/:userId' element={<ProfileContainer/>}/>*/}
-                            {/*<Route path='/dialogs' element={<DialogsContainer/>}/>*/}
-                            {/*<Route path='/news' element={<News/>}/>*/}
-                            {/*<Route path='/music' element={<Music/>}/>*/}
-                            {/*<Route path='/settings' element={<Settings/>}/>*/}
-                            {/*<Route path='/users' element={<UsersContainer/>}/>*/}
-                            {/*<Route path='/login' element={<Login/>}/>*/}
-                            {/*<Route path='*' element={<div>404 NOT FOUND</div>}/>*/}
-                        </Routes>
-                    </React.Suspense>
+            <div className={s.app}>
+                <div className={s.appContainer}>
+                    <div className={s.headerContainer}>
+                        <HeaderContainer/>
+                    </div>
+                    <div className={s.bodyContainer}>
+                        <Navbar/>
+                        {/*<Sidebar state={this.props.state.sidebar}/>*/}
+                        <div className={'app-wrapper-content'}>
+                            <React.Suspense fallback={<div><Preloader/></div>}>
+                                <Routes>
+                                    <Route exact path="/" element={<Navigate to={'/profile'}/>}/>
+                                    <Route path='/profile' element={<ProfileContainer/>}/>
+                                    <Route path='/profile/:userId' element={<ProfileContainer/>}/>
+                                    <Route path='/dialogs' element={<DialogsContainer/>}/>
+                                    <Route path='/news' element={<News/>}/>
+                                    <Route path='/music' element={<Music/>}/>
+                                    <Route path='/settings' element={<Settings/>}/>
+                                    <Route path='/users' element={<UsersContainer/>}/>
+                                    <Route path='/login' element={<Login/>}/>
+                                    <Route path='*' element={<div>404 NOT FOUND</div>}/>
+                                </Routes>
+                            </React.Suspense>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
