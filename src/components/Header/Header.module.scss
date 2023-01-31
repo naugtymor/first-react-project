@@ -2,64 +2,57 @@
   height: 100%;
   width: 100%;
   display: flex;
-  //flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 10px;
+  padding-top: 100px;
   box-sizing: border-box;
-  //background-color: red;
-  //height: 100vh;
-  //position: absolute;
-  //right: 0;
-  //top: 0;
-  //
-  //width: 60px;
-  //width: 100%;
-  //
-  //& img {
-  //  width: 40px;
-  //  padding-left: 15px;
-  //  padding-top: 8px;
-  //}
 
-  .xxx {
-    transform: rotate(90deg);
-    //background-color: red;
-
-    .userName {
-      font-family: 'Arimo', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: white;
-      text-transform: lowercase;
-      width: 300px;
-      //background-color: blue;
-    }
-  }
-
-  .loginBlock {
-    width: 90%;
+  .mainBlock {
+    width: 100%;
     height: 400px;
-    //background-color: red;
-    //position: relative;
-    //right: 0;
-    //top: 0;
-    //display: flex;
-    //align-items: center;
-    //background-color: red;
-    //height: 60px;
-    //width: 300px;
-    //transform: rotate(90deg);
 
-    & a {
-      color: white;
-      padding-right: 15px;
-    }
+    .rotateBlock {
+      transform: rotate(90deg);
+      margin: 0;
+      .loginBlock {
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .iconOut {
+          cursor: pointer;
+          color: white;
+          font-size: 40px;
+          height: 40px;
+          width: 40px;
+          transform: rotate(-90deg);
+        }
+        .iconIn {
+          padding-top: 5px;
+          cursor: pointer;
+          color: white;
+          font-size: 40px;
+          height: 40px;
+          width: 40px;
+          transform: rotate(-90deg);
+        }
 
-    & button {
-      height: 35px;
-      margin: 10px;
+        .userName {
+          margin-top: 10px;
+          height: 40px;
+          font-family: 'Arimo', sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: 10px;
+          color: white;
+          text-transform: lowercase;
+        }
+      }
+
+      & a {
+        color: white;
+        padding-right: 15px;
+      }
     }
   }
 }
