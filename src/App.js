@@ -59,7 +59,7 @@ class App extends React.Component {
                                         {/*<Route path='/settings' element={<Settings/>}/>*/}
                                         {/*<Route path='/users' element={<UsersContainer/>}/>*/}
                                         <Route path='/login' element={<Login/>}/>
-                                        <Route path='*' element={<div>404 NOT FOUND</div>}/>
+                                        <Route path='*' element={<div className={s.notFound}>404 NOT FOUND<p>.</p></div>}/>
                                     </Routes>
                                 </React.Suspense>
                         </div>

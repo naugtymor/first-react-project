@@ -1,5 +1,7 @@
 .app-wrapper-content {
-    grid-area: profile;
-    background-color: #bcbcca;
-    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+    width: 100%;
+    height: 100%;
+    /*grid-area: profile;*/
+    /*background-color: #bcbcca;*/
+    /*box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);*/
 }
