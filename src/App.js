@@ -40,28 +40,28 @@ class App extends React.Component {
 
         return (
             <div className={s.app}>
+                <div className={s.headerContainer}>
+                    <HeaderContainer/>
+                </div>
                 <div className={s.appContainer}>
-                    <div className={s.headerContainer}>
-                        <HeaderContainer/>
-                    </div>
                     <div className={s.bodyContainer}>
-                        <Navbar/>
+                        {/*<Navbar/>*/}
                         {/*<Sidebar state={this.props.state.sidebar}/>*/}
                         <div className={'app-wrapper-content'}>
-                            <React.Suspense fallback={<div><Preloader/></div>}>
-                                <Routes>
-                                    <Route exact path="/" element={<Navigate to={'/profile'}/>}/>
-                                    <Route path='/profile' element={<ProfileContainer/>}/>
-                                    <Route path='/profile/:userId' element={<ProfileContainer/>}/>
-                                    <Route path='/dialogs' element={<DialogsContainer/>}/>
-                                    <Route path='/news' element={<News/>}/>
-                                    <Route path='/music' element={<Music/>}/>
-                                    <Route path='/settings' element={<Settings/>}/>
-                                    <Route path='/users' element={<UsersContainer/>}/>
-                                    <Route path='/login' element={<Login/>}/>
-                                    <Route path='*' element={<div>404 NOT FOUND</div>}/>
-                                </Routes>
-                            </React.Suspense>
+                            {/*<React.Suspense fallback={<div><Preloader/></div>}>*/}
+                            {/*    <Routes>*/}
+                            {/*        <Route exact path="/" element={<Navigate to={'/profile'}/>}/>*/}
+                            {/*        <Route path='/profile' element={<ProfileContainer/>}/>*/}
+                            {/*        <Route path='/profile/:userId' element={<ProfileContainer/>}/>*/}
+                            {/*        <Route path='/dialogs' element={<DialogsContainer/>}/>*/}
+                            {/*        <Route path='/news' element={<News/>}/>*/}
+                            {/*        <Route path='/music' element={<Music/>}/>*/}
+                            {/*        <Route path='/settings' element={<Settings/>}/>*/}
+                            {/*        <Route path='/users' element={<UsersContainer/>}/>*/}
+                            {/*        <Route path='/login' element={<Login/>}/>*/}
+                            {/*        <Route path='*' element={<div>404 NOT FOUND</div>}/>*/}
+                            {/*    </Routes>*/}
+                            {/*</React.Suspense>*/}
                         </div>
                     </div>
                 </div>

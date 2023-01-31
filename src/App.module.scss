@@ -5,15 +5,25 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #5d146e;
+  width: 100%;
+  background-color: #e2e2e2;
+  position: relative;
+  .headerContainer {
+    background-color: #18191d;
+    //display: flex;
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    //right: 0;
+  }
 
   .appContainer {
-    width: 1400px;
-    height: 900px;
-    .headerContainer {
-      height: 10%;
-      position: relative;
-    }
+    width: 1200px;
+    height: 710px;
+    border-radius: 10px;
+    background-color: #18191d;
+
     .bodyContainer {
       display: flex;
       flex-direction: row;

@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #18191d;
+  height: 100%;
+  & img {
+    width: 40px;
+    padding-left: 15px;
+    padding-top: 8px;
+  }
+
+  .loginBlock {
+    transform: rotate(90deg);
+    width: 300px;
+    .userName {
+      font-family: 'Arimo', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: white;
+      text-transform: lowercase;
+    }
+    & a {
+      color: white;
+      padding-right: 15px;
+    }
+
+    & button {
+      height: 35px;
+      margin: 10px;
+    }
+  }
+}
