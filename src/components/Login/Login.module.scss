@@ -13,7 +13,26 @@
         text-transform: lowercase;
     }
     .loginBody {
-
+        .loginDescription {
+            font-family: 'Arimo', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: white;
+            text-transform: lowercase;
+            & a {
+                cursor: pointer;
+                text-decoration: none;
+                color: red;
+            }
+        }
+        .formSummeryError {
+            border: red 1px solid;
+            color: red;
+        }
+        .captchaImg {
+            width: 150px;
+        }
     }
 }
 

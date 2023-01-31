@@ -1,11 +1,11 @@
-import s from './FormsControls.module.css';
+import s from './FormsControls.module.scss';
 
 export const Element = Element => ({input, meta, ...props}) => {
     const hasError = meta.touched && meta.error;
 
     return (
         <div className={s.formControl + " " + (hasError ? s.error : "")}>
-            <div>
+            <div className={s.element}>
                 <Element {...input} {...props} />
             </div>
             <div>
