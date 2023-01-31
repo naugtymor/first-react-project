@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/way-of-the-samurai/static/css/main.25a68230.css",
-    "main.js": "/way-of-the-samurai/static/js/main.69381fdf.js",
+    "main.css": "/way-of-the-samurai/static/css/main.ed962cbf.css",
+    "main.js": "/way-of-the-samurai/static/js/main.c52c423d.js",
     "static/css/687.7fc8543d.chunk.css": "/way-of-the-samurai/static/css/687.7fc8543d.chunk.css",
-    "static/js/687.2b42dde5.chunk.js": "/way-of-the-samurai/static/js/687.2b42dde5.chunk.js",
+    "static/js/687.1f20f2a0.chunk.js": "/way-of-the-samurai/static/js/687.1f20f2a0.chunk.js",
     "static/css/962.5719fc47.chunk.css": "/way-of-the-samurai/static/css/962.5719fc47.chunk.css",
-    "static/js/962.893910a9.chunk.js": "/way-of-the-samurai/static/js/962.893910a9.chunk.js",
+    "static/js/962.0fcfd156.chunk.js": "/way-of-the-samurai/static/js/962.0fcfd156.chunk.js",
     "static/media/user.png": "/way-of-the-samurai/static/media/user.c3eccef5392c1b10af60.png",
     "index.html": "/way-of-the-samurai/index.html",
     "static/media/preloader.svg": "/way-of-the-samurai/static/media/preloader.5e9438c68acb1bcb5c206839b70906c1.svg",
-    "main.25a68230.css.map": "/way-of-the-samurai/static/css/main.25a68230.css.map",
-    "main.69381fdf.js.map": "/way-of-the-samurai/static/js/main.69381fdf.js.map",
+    "main.ed962cbf.css.map": "/way-of-the-samurai/static/css/main.ed962cbf.css.map",
+    "main.c52c423d.js.map": "/way-of-the-samurai/static/js/main.c52c423d.js.map",
     "687.7fc8543d.chunk.css.map": "/way-of-the-samurai/static/css/687.7fc8543d.chunk.css.map",
-    "687.2b42dde5.chunk.js.map": "/way-of-the-samurai/static/js/687.2b42dde5.chunk.js.map",
+    "687.1f20f2a0.chunk.js.map": "/way-of-the-samurai/static/js/687.1f20f2a0.chunk.js.map",
     "962.5719fc47.chunk.css.map": "/way-of-the-samurai/static/css/962.5719fc47.chunk.css.map",
-    "962.893910a9.chunk.js.map": "/way-of-the-samurai/static/js/962.893910a9.chunk.js.map"
+    "962.0fcfd156.chunk.js.map": "/way-of-the-samurai/static/js/962.0fcfd156.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.25a68230.css",
-    "static/js/main.69381fdf.js"
+    "static/css/main.ed962cbf.css",
+    "static/js/main.c52c423d.js"
   ]
 }
