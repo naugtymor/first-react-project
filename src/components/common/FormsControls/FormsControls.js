@@ -8,7 +8,7 @@ export const Element = Element => ({input, meta, ...props}) => {
             <div className={s.element}>
                 <Element {...input} {...props} />
             </div>
-            <div>
+            <div className={s.required}>
                 {hasError && <span> {meta.error} </span>}
             </div>
         </div>

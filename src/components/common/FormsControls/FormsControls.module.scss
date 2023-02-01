@@ -1,24 +1,32 @@
 .formControl {
+
     .error {
-        & input {
-            width: 200px;
-        }
-        & textarea {
-            border: solid red 3px;
-        }
-        & span {
-            color: red;
+        .required {
+            & input {
+                width: 200px;
+            }
+            & textarea {
+                border: solid red 3px;
+            }
+            & span {
+                color: red;
+            }
         }
     }
     .element {
         & input {
-            width: 200px;
-            color: red;
+            padding-left: 10px;
+            margin-top: 20px;
+            font-family: 'Arimo', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border: 0;
+            //border-radius: 0;
+            width: 310px;
+            height: 30px;
+            color: black;
         }
     }
 
-}
-
-input {
-    background-color: red;
 }
